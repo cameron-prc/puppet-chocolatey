@@ -84,7 +84,7 @@ validate_re($choco_install_location, '^\w\:',
 
   validate_string($chocolatey_download_url)
 # lint:ignore:140chars
-  validate_re($chocolatey_download_url,['^http\:\/\/','^https\:\/\/','file\:\/\/\/'],
+  validate_re($chocolatey_download_url,['^http\:\/\/','^https\:\/\/','^file:\/\/((?=[a-zA-Z0-9])([a-zA-Z0-9-]{1,15})(?<!-))?\/'],
     "For chocolatey_download_url, if not using the default '${::chocolatey::params::download_url}', please use a Http/Https/File Url that downloads 'chocolatey.nupkg'."
   )
 # lint:endignore
